@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background-color: #EECFAC;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fff;
+  font-family: AcuminVariable, serif;
+  font-size: 150px;
+  text-decoration: none;
+  outline: none;
+	margin: 0;
+	text-transform: uppercase;
+	line-height: 0.78;
+	transition: all 250ms linear;
+	font-variation-settings: 'wght' 900, 'wdth' 115; //'wght' 100-900, 'wdth' 50-115
+}
+
+@media screen and (max-width : 613px)
+{
+  h1
+  {
+    font-variation-settings: 'wght' 100, 'wdth' 50;
+  }
+}
+@media screen and (min-width : 614px)
+{
+  h1
+  {
+    font-variation-settings: 'wght' 400, 'wdth' 50;
+  }
+}
+@media screen and (min-width : 1000px)
+{
+  h1
+  {
+    font-variation-settings: 'wght' 700, 'wdth' 80;
+  }
+}
+@media screen and (min-width : 1401px)
+{
+  h1
+  {
+    font-variation-settings: 'wght' 900, 'wdth' 115;
+  }
+}
