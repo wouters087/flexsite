@@ -67,10 +67,18 @@ h3 {
   h1
   {
     font-size: 96px;
-    font-variation-settings: 'wght' 550, 'wdth' 50;
+    font-variation-settings: 'wght' 400, 'wdth' 50;
   }
 }
-@media screen and (min-width : 725px)
+@media screen and (min-width : 740px)
+{
+  h1
+  {
+    font-size: 120px;
+    font-variation-settings: 'wght' 400, 'wdth' 50;
+  }
+}
+@media screen and (min-width : 860px)
 {
   h1
   {
@@ -78,11 +86,11 @@ h3 {
     font-variation-settings: 'wght' 550, 'wdth' 50;
   }
 }
-@media screen and (min-width : 1100px)
+@media screen and (min-width : 1120px)
 {
   h1
   {
-    font-size: 131px;
+    font-size: 148px;
     font-variation-settings: 'wght' 700, 'wdth' 50;
   }
 }
@@ -90,12 +98,42 @@ h3 {
 {
   h1
   {
-    font-variation-settings: 'wght' 850, 'wdth' 85;
+    font-size: 126px;
+    font-variation-settings: 'wght' 800, 'wdth' 92;
   }
 }
 
 .site {
 	margin: 0 auto;
+}
+
+.button {
+  font-size: 28px;
+  text-transform: uppercase;
+  line-height: .8;
+  font-variation-settings: 'wght' 800, 'wdth' 50;
+  letter-spacing: 0.05em;
+  background: #FADD5E;
+  color: black;
+  padding: 20px 25px 15px 25px;
+  text-decoration: inherit;
+}
+
+.box-2 .button {
+  position: relative;
+  bottom: 85%;
+  Left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transition: 0.5s;
+  border-radius: 50%;
+}
+
+.box-2 .button:hover {
+  letter-spacing: 0.1em;
+  background: black;
+  color: #FADD5E;
+  transition: 0.5s;
 }
 
 .dashboard {
@@ -126,33 +164,57 @@ h3 {
   background-color: #61BBDA;
   border: 5px black solid;
   outline: 5px black solid;
-}
-
-.box-1:before {
-  background: url('../main_dancer.png') no-repeat center center/cover;
-  position: relative;
-  width: 100%;
-  height: auto;
-}
-
-/* .box-1 img {
+  background-image: url("../main_dancer.png");
+  background-position: right;
   object-fit: cover;
-  width: 100%;
-  height: auto;
-  position: relative;
-} */
+  background-repeat: no-repeat;
+  background-size: auto 1200px;
+}
+
+@media screen and (max-width : 560px)
+{
+  .box-1 {
+    background-size: auto 360px;
+  }
+}
+
+@media screen and (min-width : 561px)
+{
+  .box-1 {
+    background-size: auto 500px;
+  }
+}
+
+@media screen and (min-width : 840px)
+{
+  .box-1 {
+    background-size: auto 610px;
+  }
+}
+
+@media screen and (min-width : 1740px)
+{
+  .box-1 {
+    background-size: auto 750px;
+  }
+}
 
 .box-2 {
   border: 5px black solid;
-  outline: 5px black solid
+  outline: 5px black solid;
+  background-image: url("../shapes.png");
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  position: relative;
 }
 
-.box-2 img {
+/* .box-2 img {
   object-fit: cover;
   width: 100%;
   height: 100%;
   position: relative;
-}
+} */
 
 .box-3 {
   background-color: #FFF;
@@ -161,7 +223,6 @@ h3 {
   padding: 1em;
   width: 100%;
   display: flex;
-  height: 200px;
   flex-wrap: wrap;
   align-content: space-between;
 }
@@ -240,7 +301,7 @@ CSS Grid layout:
 
 @supports (grid-area: auto) {
 
-  @media screen and (max-width: 799px) {
+  @media screen and (max-width: 840px) {
 
     .site {
       justify-items: stretch;
@@ -264,7 +325,7 @@ CSS Grid layout:
 
   }
 
-	@media screen and (min-width: 800px) {
+	@media screen and (min-width: 841px) {
 
 		.site {
 			grid-template-columns: 12em auto 12em;
@@ -281,21 +342,21 @@ CSS Grid layout:
     }
 
     .dashboard {
-      grid-template-columns: repeat(5, 20%)
-      grid-template-rows: repeat(6, 20em)
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(6, 18.5em);
     }
 
     .grid {
       background: #000;
       display: grid;
       border-bottom: 5px solid #000;
-      grid-template-columns: auto 12em;
-      grid-auto-rows: auto 12em;
+      /* grid-template-columns: auto 12em;
+      grid-auto-rows: auto 12em; */
     }
 
     .box {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: left;
     }
 
@@ -323,17 +384,17 @@ CSS Grid layout:
 
     .box-5 {
       grid-column: 1 / span 2;
-      grid-row: 4 / span 3;
+      grid-row: 4 / span 2;
     }
 
     .box-6 {
       grid-column: 3 / span 3;
-      grid-row: 4;
+      grid-row: 4 / span 2;
     }
 
     .box-7 {
       grid-column: 3 / span 3;
-      grid-row: 5 / span 2;
+      grid-row: 5;
     }
 
 		.colophon {
@@ -352,6 +413,11 @@ CSS Grid layout:
       align-items: stretch;
       max-width: 1600px;
       position: relative;
+    }
+
+    .dashboard {
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(6, 22em);
     }
 
 }
