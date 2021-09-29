@@ -24,6 +24,13 @@ textarea {
 	line-height: 1.2;
 }
 
+a {
+  line-height: inherit;
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+}
+
 h1,
 h2,
 h3,
@@ -113,10 +120,11 @@ h3 {
   line-height: .8;
   font-variation-settings: 'wght' 800, 'wdth' 50;
   letter-spacing: 0.05em;
-  background: #FADD5E;
+  background: white;
   color: black;
   padding: 20px 25px 15px 25px;
   text-decoration: inherit;
+  border-radius: 30px;
 }
 
 .box-2 .button {
@@ -126,7 +134,7 @@ h3 {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transition: 0.5s;
-  border-radius: 50%;
+  background: #FADD5E;
 }
 
 .box-2 .button:hover {
@@ -202,19 +210,12 @@ h3 {
 .box-2 {
   border: 5px black solid;
   outline: 5px black solid;
-  background-image: url("../shapes.png");
+  /* background-image: url("../shapes.png"); */
   object-fit: cover;
   background-repeat: no-repeat;
   background-size: auto 100%;
   position: relative;
 }
-
-/* .box-2 img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  position: relative;
-} */
 
 .box-3 {
   background-color: #FFF;
@@ -265,11 +266,90 @@ h3 {
   max-width: 100%;
 }
 
+.artists::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 50%;
+    background-position-y: center;
+    background-image: url("../Artist.png");
+    opacity: 1;
+    z-index: 1;
+    transition: opacity .5s ease;
+  }
+
+.artists {
+  position: relative;
+  padding: 1em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: 50%;
+  background-position-y: center;
+  background-image: url("../Artist-hover.png");
+}
+
+.artists:hover::after {
+  opacity: 0;
+}
+
+:after,
+:before {
+    box-sizing: inherit;
+  }
+
 .box-6 {
   background-color: #61BBDA;
   border: 5px black solid;
   outline: 5px black solid;
   max-width: 100%;
+}
+
+.box-6 .button {
+  position: relative;
+  bottom: 32%;
+  Left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transition: 0.5s;
+}
+
+.box-6 .button:hover {
+  background: black;
+  color: white;
+  transition: 0.5s;
+}
+
+.beer {
+  /* padding: 3em 5em; */
+  text-align: center;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.beer-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity .3s ease;
+    background-image: url("../giphy.gif");
+    background-repeat: repeat;
+    background-position: left 0;
 }
 
 .box-7 {
@@ -280,13 +360,13 @@ h3 {
 }
 
 .colophon {
-	padding: 6em 4em;
-	color: #EECFAC;
+	padding: 4em 2em 2em 2em;
+	color: #000;
 	text-align: left;
 }
 
 .colophon a {
-	color: #EECFAC;
+	color: #000;
   text-decoration: inherit;
 }
 
@@ -343,7 +423,7 @@ CSS Grid layout:
 
     .dashboard {
       grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(6, 18.5em);
+      grid-template-rows: repeat(5, 18.5em);
     }
 
     .grid {
@@ -389,7 +469,7 @@ CSS Grid layout:
 
     .box-6 {
       grid-column: 3 / span 3;
-      grid-row: 4 / span 2;
+      grid-row: 4;
     }
 
     .box-7 {
@@ -417,7 +497,7 @@ CSS Grid layout:
 
     .dashboard {
       grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(6, 22em);
+      grid-template-rows: repeat(5, 22em);
     }
 
 }
