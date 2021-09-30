@@ -329,8 +329,7 @@ h3 {
   transition: 0.5s;
 }
 
-.beer {
-  /* padding: 3em 5em; */
+/* .beer {
   text-align: center;
   display: block;
   position: relative;
@@ -350,7 +349,7 @@ h3 {
     background-image: url("../giphy.gif");
     background-repeat: repeat;
     background-position: left 0;
-}
+} */
 
 .box-7 {
   background-color: #000;
