@@ -312,6 +312,11 @@ h3 {
   border: 5px black solid;
   outline: 5px black solid;
   max-width: 100%;
+  position: relative;
+}
+
+.box-6:hover {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%), #61BBDA;
 }
 
 .box-6 .button {
@@ -326,10 +331,10 @@ h3 {
 .box-6 .button:hover {
   background: black;
   color: white;
-  transition: 0.5s;
+  transition: opacity .3s ease;
 }
 
-/* .beer {
+.beer {
   text-align: center;
   display: block;
   position: relative;
@@ -338,18 +343,22 @@ h3 {
 
 .beer-grid {
     position: absolute;
+    background-repeat: repeat;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 1;
-    overflow: hidden;
+    overflow: visible;
     opacity: 0;
+    background-image: url("../giphy-beer.gif");
     transition: opacity .3s ease;
-    background-image: url("../giphy.gif");
-    background-repeat: repeat;
     background-position: left 0;
-} */
+}
+
+.box-6:hover .beer-grid {
+  opacity: 1;
+}
 
 .box-7 {
   background-color: #000;
