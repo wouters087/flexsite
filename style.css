@@ -4,13 +4,15 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-stroke: inherit;
   text-rendering: optimizeLegibility;
+  box-sizing: border-box;
 }
 
 body {
   background-color: #F6BEBE;
 }
 
-footer {
+footer,
+section {
   background-color: white;
 }
 
@@ -384,6 +386,65 @@ h3 {
 }
 
 /*--------------------------------------------------------------
+Cards:
+--------------------------------------------------------------*/
+
+.featured {
+  padding: 3em 2em 2em 2em;
+  color: #000;
+  text-align: left;
+}
+
+.cards {
+	max-width: 100%;
+	margin: auto;
+	padding: 0;
+	list-style-type: none;
+}
+
+.card {
+
+}
+
+.card img {
+  width: 100%;
+}
+
+.cards a {
+	display: block;
+	margin-bottom: 1em;
+	text-decoration: none;
+}
+
+.caption {
+	padding: 1em 0;
+  color: black;
+}
+
+.artist {
+	margin: 0;
+	line-height: 1em;
+}
+
+.time2 {
+	margin: 0;
+  padding-right: 7px;
+	line-height: 1em;
+	color: #61BBDA;
+}
+
+.podium {
+	padding: 0;
+	line-height: 1em;
+	color: #F6BEBE;
+}
+
+.cards a:focus .caption,
+.cards a:hover .caption {
+	background: hsl(0, 0%, 97%);
+}
+
+/*--------------------------------------------------------------
 CSS Grid layout:
 --------------------------------------------------------------*/
 
@@ -397,19 +458,59 @@ CSS Grid layout:
       position: relative;
     }
 
-    /* .box {
+    .box {
       display: flex;
       align-items: center;
       justify-content: left;
-    } */
+    }
 
     .box-1 {
-      padding-top: 90px;
+      padding-top: 120px;
+    }
+
+    .box-2 {
+      padding-top: 3.5em;
+      background-color: black;
     }
 
     .box-3 {
       width: inherit;
+      height: 150px;
     }
+
+    .box-4 {
+      display: none;
+    }
+
+    .box-5 {
+      height: 700px;
+    }
+
+    .box-6 {
+      padding-top: 3.5em;
+    }
+
+    .box-7 {
+      padding: 3.5em 0;
+    }
+
+//*row*//
+    .cards {
+			float: left;
+      width: 20%;
+      padding: 0 10px;
+		}
+
+//*column*//
+	   .card-item {
+       margin-left: 0 -5px;
+     }
+
+     .card-item:after {
+       content: "";
+       display: table;
+       clear: both;
+     }
 
   }
 
@@ -483,6 +584,21 @@ CSS Grid layout:
     .box-7 {
       grid-column: 3 / span 3;
       grid-row: 5;
+    }
+
+    .featured {
+      padding-top: 120px;
+    }
+
+    .cards {
+    	display: flex;
+      height: auto;
+      padding: 10px 100px 0 100px;
+    }
+
+    .card-item{
+      flex: 50%;
+      margin: 0 1em;
     }
 
 		.colophon {
